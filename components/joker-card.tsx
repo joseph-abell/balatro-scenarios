@@ -71,7 +71,7 @@ export default function JokerCard({
           <CardTitle className="text-lg font-bold">{joker.name}</CardTitle>
           <Badge className={`${getRarityColor(joker.rarity)} text-white`}>{joker.rarity}</Badge>
         </div>
-        <CardDescription className="text-xs">{joker.type || "No type"}</CardDescription>
+        <CardDescription className="text-xs">{joker.type?.split(', ') || "No type"}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
         <p className="text-sm mb-2">{joker.description}</p>
