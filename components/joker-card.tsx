@@ -71,7 +71,7 @@ export default function JokerCard({
           <CardTitle className="text-lg font-bold">{joker.name}</CardTitle>
           <Badge className={`${getRarityColor(joker.rarity)} text-white`}>{joker.rarity}</Badge>
         </div>
-        <CardDescription className="text-xs">{joker.type?.split(', ') || "No type"}</CardDescription>
+        <CardDescription className="text-xs">{joker.type?.join(', ') || "No type"}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
         <p className="text-sm mb-2">{joker.description}</p>
@@ -109,10 +109,6 @@ export default function JokerCard({
         )}
       </CardContent>
       <CardFooter className="flex justify-between pt-2">
-        <Button variant="ghost" size="sm" onClick={() => setIsExpanded(!isExpanded)}>
-          {isExpanded ? "Show Less" : "Show More"}
-        </Button>
-
         <Popover>
           <PopoverTrigger asChild>
             <Button size="sm" variant="outline">
